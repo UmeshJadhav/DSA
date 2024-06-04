@@ -1,0 +1,88 @@
+import UIKit
+
+///Right Angle Traingle
+//*
+//**
+//***
+//****
+//*****
+
+func drawRightAngleTraingle(for rows: Int) {
+    for i in 1...rows {
+        var createRow = ""
+        for j in 0..<i {
+            createRow += "*"
+        }
+        print(createRow)
+    }
+}
+
+//drawRightAngleTraingle(for: 5)
+
+///Draw Reactangle
+//*****
+//*****
+//*****
+//*****
+//*****
+
+func drawRectangle(for rows: Int) {
+    for i in 1...rows {
+        var currentRow = ""
+        for j in 1...rows {
+            currentRow += "*"
+        }
+        print(currentRow)
+    }
+}
+//drawRectangle(for: 5)
+
+
+// Draw Left Angle Traingle
+//    *
+//   **
+//  ***
+// ****
+//*****
+
+func drwaLeftAngleTraingle(for rows: Int) {
+    for i in 1...rows {
+        var blankString = " "
+        var starString = ""
+        for j in 0...rows-i {
+            blankString += " "
+        }
+        for k in 0..<i {
+            starString += "*"
+        }
+        print(blankString + starString)
+    }
+}
+
+
+//drwaLeftAngleTraingle(for: 5)
+
+// Draw pyramid of stars
+//    *
+//   ***
+//  ******
+// ********
+//**********
+
+
+func drawPyramidOfStarts(for rows: Int) {
+    for i in 0...rows {
+        var blankString = ""
+        var startString = ""
+        for j in 0..<rows - i {
+            blankString += " "
+        }
+        for k in 0..<(2 * i + 1) {  //This is important. Becous, we need to multiply * twice per row
+            startString += "*"
+        }
+        print(blankString + startString)
+    }
+}
+
+//drawPyramidOfStarts(for: 5)
+
