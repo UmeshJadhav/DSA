@@ -1,0 +1,149 @@
+import UIKit
+
+///Right Angle Traingle
+//*
+//**
+//***
+//****
+//*****
+
+func drawRightAngleTraingle(for rows: Int) {
+    for i in 1...rows {
+        var createRow = ""
+        for j in 0..<i {
+            createRow += "*"
+        }
+        print(createRow)
+    }
+}
+
+//drawRightAngleTraingle(for: 5)
+//----------------------------------------------------------
+
+///Draw Reactangle
+//*****
+//*****
+//*****
+//*****
+//*****
+
+func drawRectangle(for rows: Int) {
+    for i in 1...rows {
+        var currentRow = ""
+        for j in 1...rows {
+            currentRow += "*"
+        }
+        print(currentRow)
+    }
+}
+//drawRectangle(for: 5)
+//----------------------------------------------------------
+
+// Draw Left Angle Traingle
+//    *
+//   **
+//  ***
+// ****
+//*****
+
+func drwaLeftAngleTraingle(for rows: Int) {
+    for i in 1...rows {
+        var blankString = " "
+        var starString = ""
+        for j in 0...rows-i {
+            blankString += " "
+        }
+        for k in 0..<i {
+            starString += "*"
+        }
+        print(blankString + starString)
+    }
+}
+//drwaLeftAngleTraingle(for: 5)
+//----------------------------------------------------------
+
+// Draw pyramid of stars
+//    *
+//   ***
+//  ******
+// ********
+//**********
+
+func drawPyramidOfStarts(for rows: Int) {
+    for i in 0...rows {
+        var blankString = ""
+        var startString = ""
+        for j in 0..<rows - i {
+            blankString += " "
+        }
+        for k in 0..<(2 * i + 1) {  //This is important. Becous, we need to multiply * twice per row
+            startString += "*"
+        }
+        print(blankString + startString)
+    }
+}
+//drawPyramidOfStarts(for: 5)
+//----------------------------------------------------------
+
+//Dimond pattern
+//      *
+//     ***
+//    *****
+//   *******
+//  *********
+//   *******
+//    *****
+//     ***
+//      *
+
+func drawDimondPattern(for rows: Int) {
+    //Upper Traingle
+    for i in 0...rows {
+        var blankString = ""
+        var startString = ""
+        for j in 0..<rows - i {
+            blankString += " "
+        }
+        for k in 0..<(2 * i + 1) {
+            startString += "*"
+        }
+        print(blankString + startString)
+    }
+
+    //Lower Traingle
+    var m = rows
+    while m >= 0 {
+        var blankString = ""
+        var startString = ""
+        for j in 0..<rows - m {
+            blankString += " "
+        }
+        for k in 0..<(2 * m + 1) {
+            startString += "*"
+        }
+        m -= 1
+        print(blankString + startString)
+    }
+}
+
+//drawPyramidOfStarts(for: 5)
+//----------------------------------------------------------
+
+/Floydes Traigle
+//1
+//2 3
+//4 5 6
+//7 8 9 10
+func floydTraingle(for rows: Int) {
+    var counter = 0
+    for i in 1...rows {
+        var rowString = ""
+        for j in i..<i * 2 {
+            counter += 1
+            rowString += "\(counter) "
+        }
+        print(rowString)
+    }
+}
+floydTraingle(for: 5)
+
