@@ -18,6 +18,7 @@ func drawRightAngleTraingle(for rows: Int) {
 }
 
 //drawRightAngleTraingle(for: 5)
+//----------------------------------------------------------
 
 ///Draw Reactangle
 //*****
@@ -36,7 +37,7 @@ func drawRectangle(for rows: Int) {
     }
 }
 //drawRectangle(for: 5)
-
+//----------------------------------------------------------
 
 // Draw Left Angle Traingle
 //    *
@@ -58,9 +59,8 @@ func drwaLeftAngleTraingle(for rows: Int) {
         print(blankString + starString)
     }
 }
-
-
 //drwaLeftAngleTraingle(for: 5)
+//----------------------------------------------------------
 
 // Draw pyramid of stars
 //    *
@@ -68,7 +68,6 @@ func drwaLeftAngleTraingle(for rows: Int) {
 //  ******
 // ********
 //**********
-
 
 func drawPyramidOfStarts(for rows: Int) {
     for i in 0...rows {
@@ -80,6 +79,49 @@ func drawPyramidOfStarts(for rows: Int) {
         for k in 0..<(2 * i + 1) {  //This is important. Becous, we need to multiply * twice per row
             startString += "*"
         }
+        print(blankString + startString)
+    }
+}
+//drawPyramidOfStarts(for: 5)
+//----------------------------------------------------------
+
+//Dimond pattern
+//      *
+//     ***
+//    *****
+//   *******
+//  *********
+//   *******
+//    *****
+//     ***
+//      *
+
+func drawDimondPattern(for rows: Int) {
+    //Upper Traingle
+    for i in 0...rows {
+        var blankString = ""
+        var startString = ""
+        for j in 0..<rows - i {
+            blankString += " "
+        }
+        for k in 0..<(2 * i + 1) {
+            startString += "*"
+        }
+        print(blankString + startString)
+    }
+
+    //Lower Traingle
+    var m = rows
+    while m >= 0 {
+        var blankString = ""
+        var startString = ""
+        for j in 0..<rows - m {
+            blankString += " "
+        }
+        for k in 0..<(2 * m + 1) {
+            startString += "*"
+        }
+        m -= 1
         print(blankString + startString)
     }
 }
