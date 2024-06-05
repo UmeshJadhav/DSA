@@ -127,4 +127,23 @@ func drawDimondPattern(for rows: Int) {
 }
 
 //drawPyramidOfStarts(for: 5)
+//----------------------------------------------------------
+
+/Floydes Traigle
+//1
+//2 3
+//4 5 6
+//7 8 9 10
+func floydTraingle(for rows: Int) {
+    var counter = 0
+    for i in 1...rows {
+        var rowString = ""
+        for j in i..<i * 2 {
+            counter += 1
+            rowString += "\(counter) "
+        }
+        print(rowString)
+    }
+}
+floydTraingle(for: 5)
 
