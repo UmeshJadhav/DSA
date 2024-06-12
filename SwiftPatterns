@@ -145,5 +145,150 @@ func floydTraingle(for rows: Int) {
         print(rowString)
     }
 }
-floydTraingle(for: 5)
+//floydTraingle(for: 5)
+//----------------------------------------------------------
 
+//1
+//12
+//123
+//1234
+//12345
+
+func drawNumbersTraingleFor(rows: Int) {
+    for i in 1...rows {
+        var numberString = ""
+        for j in 1...i {
+            numberString += "\(j)"
+        }
+        print(numberString)
+    }
+}
+//drawNumbersTraingleFor(rows: 5)
+
+//----------------------------------------------------------
+
+//1
+//22
+//333
+//4444
+//55555
+
+func drawSinglePattern(rows: Int) {
+    for i in 1...rows {
+        var numbString = ""
+        for j in 1...i{
+            numbString += "\(i)"
+        }
+        print(numbString)
+    }
+}
+//drawSinglePattern(rows: 5)
+
+//----------------------------------------------------------
+
+//12345
+//1234
+//123
+//12
+//1
+
+func numberPattern(rows: Int) {
+    for i in 0..<rows {
+        var numbString = ""
+        for j in 1...rows - i {
+            numbString += "\(j)"
+        }
+        draw(numbString)
+    }
+}
+//numberPattern(rows: 5)
+
+//----------------------------------------------------------
+
+//*
+//**
+//***
+//****
+//*****
+//****
+//***
+//**
+//*
+
+func drawRightArrow(rows: Int) {
+    //Upper part
+    for i in 1...rows {
+        var starString = ""
+        for j in 1...i {
+            starString += "*"
+        }
+        print(starString)
+    }
+    //Draw lower
+    for i in 0..<rows {
+        var starString = ""
+        for j in 1..<rows - i {
+            starString += "*"
+        }
+        print(starString)
+    }
+}
+//drawRightArrow(rows: 10)
+
+//----------------------------------------------------------
+
+//ButteryFly Pattern
+// *        *
+// **      **
+// ***    ***
+// ****  ****
+// **********
+// ****  ****
+// ***    ***
+// **      **
+// *        *
+
+func drawButterflyPatternFor(rows: Int) {
+    guard rows % 2 == 0 else { return } // Ensure rows is an even number
+    let halfRows = rows / 2
+    for i in 1...halfRows {
+        var blankString = ""
+        var leftStarString = ""
+        var rightStarString = ""
+
+        //Left star string
+        for j in 1...i {
+            leftStarString += "*"
+        }
+
+        //draw blank string
+        for k in 0..<(rows - 2 * i) {
+            blankString += " "
+        }
+
+        // Right star string
+        for m in 1...i {
+            rightStarString += "*"
+        }
+        print(leftStarString + blankString + rightStarString)
+    }
+
+    for i in 1...halfRows {
+        var blankString = ""
+        var leftStarString = ""
+        var rightStarString = ""
+
+        for j in 0..<halfRows - i  {
+            leftStarString += "*"
+        }
+        for k in 0..<(2 * i) {
+            blankString += " "
+        }
+
+        for j in 0..<halfRows - i {
+            rightStarString += "*"
+        }
+        print(leftStarString + blankString + rightStarString)
+    }
+}
+//drawButterflyPatternFor(rows: 10)
