@@ -107,6 +107,33 @@ func reverseArrayUsingRecurrsion(_ array: [Int], _ start: Int, _ end: Int) -> [I
     return a
 }
 
-var inputeArray = [9,8,7,6,4]
-print(reverseArrayUsingRecurrsion(inputeArray, 0, inputeArray.count - 1))
+//var inputeArray = [9,8,7,6,4]
+//print(reverseArrayUsingRecurrsion(inputeArray, 0, inputeArray.count - 1))
+//-----------------------------------------------------------------
+
+//Problem Statement: "Given a string, check if the string is palindrome or not."  A string is said to be palindrome if the reverse of the string is the same as the string.
+/*
+ Example 1:
+ Input: Str =  “ABCDCBA”
+ Output: Palindrome
+
+ Example 2:
+ Input: Str = “TAKE U FORWARD”
+ Output: Not Palindrome
+ */
+func isPlindrom(input: String) -> Bool {
+    let cleannedCharater: [Character] = input.lowercased().filter { $0.isLetter || $0.isNumber }
+    var start = 0
+    var end = cleannedCharater.count - 1
+    while start < end {
+        if cleannedCharater[start] != cleannedCharater[end] {
+            return false
+        }
+        start += 1
+        end -= 1
+    }
+    return true
+}
+
+//isPlindrom(input: "ABCDCBA")
 
