@@ -1,6 +1,10 @@
 import UIKit
 
 //Problem Statement: Given an array of N integers, write a program to implement the Selection sorting algorithm.
+//Time Complexity
+//Best Case: O(n^2)
+//Average Case: O(n^2)
+//Worst Case: O(n^2)
 /*
  Example 1:
  Input: N = 6, array[] = {13,46,24,52,20,9}
