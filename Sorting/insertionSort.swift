@@ -20,7 +20,7 @@ import UIKit
 //Average Case: O(n^2)
 //Worst Case: O(n^2)
 
-func insetionSort(_ inputArray: [Int]) {
+func insertionSort(_ inputArray: [Int]) {
     var a = inputArray
     for i in 0..<a.count - 1 {
         var j = i + 1
@@ -37,4 +37,4 @@ func insetionSort(_ inputArray: [Int]) {
     }
     print(a)
 }
-insetionSort([13,46,24,52,20,9])
+insertionSort([13,46,24,52,20,9])
