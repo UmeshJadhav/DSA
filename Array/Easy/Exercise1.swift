@@ -92,3 +92,86 @@ func rotateArray(_ array: inout [Int], by k: Int) {
 //var inputArray = [1,2,3,4,5,6,7]
 //rotateArray(&inputArray, by: 2)
 //print(inputArray)
+
+
+//Problem Statement: You are given an array of integers, your task is to move all the zeros in the array to the end of the array and move non-negative integers to the front by maintaining their order.
+/*
+ Input:
+  1 ,0 ,2 ,3 ,0 ,4 ,0 ,1
+ Output:
+  1 ,2 ,3 ,4 ,1 ,0 ,0 ,0
+ */
+
+
+func moveZeroes(_ array: inout [Int]) {
+
+    var nonZeroIndex = 0
+
+    for i in 0..<array.count {
+        if array[i] != 0 {
+            array[nonZeroIndex] = array[i]
+            nonZeroIndex += 1
+        }
+    }
+
+    for i in nonZeroIndex..<array.count {
+        array[i] = 0
+    }
+
+
+}
+//var inpurtArray = [ 1 ,0 ,2 ,3 ,0 ,4 ,0 ,1]
+//moveZeroes(&inpurtArray)
+//print(inpurtArray)
+
+
+func unionOf(_ array1:[Int], _ array2:[Int]) ->[Int] {
+    var resultArray = [Int]()
+
+
+    var i = 0
+    var j = 0
+
+    while i < array1.count && j < array2.count {
+
+        if array1[i] == array2[j] {
+            if resultArray.last != array1[i] {
+                resultArray.append(array1[i])
+            }
+            i += 1
+            j += 1
+        }else if array1[i] < array2[j] {
+            if resultArray.last != array1[i] {
+                resultArray.append(array1[i])
+            }
+            i += 1
+        } else {
+            if resultArray.last != array1[j] {
+                resultArray.append(array2[i])
+            }
+            j += 1
+        }
+    }
+
+    while i < array1.count {
+        if resultArray.last != array1[i] {
+            resultArray.append(array1[i])
+        }
+        i += 1
+    }
+
+    while j < array2.count {
+        if resultArray.last != array2[j] {
+            resultArray.append(array2[j])
+        }
+        j += 1
+    }
+
+    return resultArray
+}
+
+var arr1 = [1,2,3,4,5,6,7,8,9,10]
+var arr2 = [2,3,4,4,5,11,12]
+
+let reult = unionOf(arr1, arr2)
+print(reult)
