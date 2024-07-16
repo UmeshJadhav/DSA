@@ -173,5 +173,57 @@ func unionOf(_ array1:[Int], _ array2:[Int]) ->[Int] {
 var arr1 = [1,2,3,4,5,6,7,8,9,10]
 var arr2 = [2,3,4,4,5,11,12]
 
-let reult = unionOf(arr1, arr2)
-print(reult)
+// let reult = unionOf(arr1, arr2)
+// print(reult)
+
+
+////Problem Statement: Given an array that contains only 1 and 0 return the count of maximum consecutive ones in the array.
+//{1, 1, 0, 1, 1, 1}
+//Output: 3
+func maxConsecativeOne(_ array: [Int]) -> Int {
+
+    var result = 0
+
+    for i in 0..<array.count {
+        var oneLength = 0
+
+        if array[i] == 1 {
+
+            oneLength = 1
+
+            var j = i + 1
+
+            while j < array.count && array[j] == 1 {
+                oneLength += 1
+                j += 1
+            }
+        }
+
+        if oneLength > result {
+            result = oneLength
+        }
+
+    }
+
+    return result
+}
+//let result = maxConsecativeOne([1, 0, 1, 1, 0, 1])
+//print(result)
+
+//Problem Statement: Given a non-empty array of integers arr, every element appears twice except for one. Find that single one.
+//{4,1,2,1,2}
+//4
+
+func findDuplicate(_ array: [Int]) -> Int {
+
+    var xor = 0
+
+    for i in 0..<array.count {
+        xor ^= array[i]
+    }
+
+    return xor
+}
+// let result = findDuplicate([4,1,2,1,2])
+// print(result)
+
