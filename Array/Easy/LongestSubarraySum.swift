@@ -22,26 +22,23 @@ Explanation: The longest subarray with sum 10 is {2, 3, 5}. And its length is 3.
 
 //Time Complexity: O(N2)
 func longestSum(n: Int, k: Int, _ array:[Int]) -> Int {
-
-    var maxLength = 0
-
+ var maxLength = 0
     for i in 0..<n {
-        var length = 0
+       var length = 0
         if array[i] < k {
-            var j = i + 1
             var sum = array[i]
+            var j = i + 1
             while j < n {
-                length += 1
                 sum += array[j]
                 if sum == k {
-                    length += 1
-                    break
+                    length = j - i + 1
                 }
                 j += 1
             }
-        }
-        if maxLength < length {
-            maxLength = length
+
+            if length > maxLength {
+                maxLength = length
+            }
         }
     }
     return maxLength
