@@ -45,15 +45,16 @@ func isSorted(_ array:[Int]) -> Bool {
 //arr[1,1,2,2,2,3,3]
 
 func removeDuplicate(_ array: inout [Int]) {
-    var i = 0
-    var j = i + 1
-    while j < array.count {
-        if array[i] != array[j] {
-            i += 1
-            array[i] = array[j]
-            j += 1
+   var uniqueIndex = 0
+    // Iterate through the array with a scanning pointer
+    for j in 1..<array.count {
+        // If the current element is different from the last unique element
+        if array[j] != array[uniqueIndex] {
+            // Move the unique element pointer
+            uniqueIndex += 1
+            // Update the array at the unique element pointer with the current element
+            array[uniqueIndex] = array[j]
         }
-        j += 1
     }
 }
 
