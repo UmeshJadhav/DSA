@@ -227,3 +227,36 @@ func findDuplicate(_ array: [Int]) -> Int {
 // let result = findDuplicate([4,1,2,1,2])
 // print(result)
 
+//Problem Statement: Given an array and a sum k, we need to print the length of the longest subarray that sums to k.
+//Example 1:
+//Input Format:
+// N = 3, k = 5, array[] = {2,3,5}
+//Result:
+// 2
+
+func longestSubArray(_ array: [Int], k: Int, n: Int) -> Int {
+    var maxLength = 0
+    for i in 0..<n {
+       var length = 0
+        if array[i] < k {
+            var sum = array[i]
+            var j = i + 1
+            while j < n {
+                sum += array[j]
+                if sum == k {
+                    length = j - i + 1
+                }
+                j += 1
+            }
+
+            if length > maxLength {
+                maxLength = length
+            }
+        }
+    }
+    return maxLength
+}
+
+//var array = [2,3,5,1,9]
+//let result = longestSubArray(array, k: 10, n: array.count)
+//print(result)
