@@ -214,5 +214,32 @@ func rearrangeArray(_ nums: [Int]) -> [Int] {
     }
     return resultArray
 }
-let result = rearrangeArray([3,1,-2,-5,2,-4])
+//let result = rearrangeArray([3,1,-2,-5,2,-4])
+//print(result)
+
+//6. Maximum subarray
+/*
+ Problem Statement: Given an integer array arr, find the contiguous subarray (containing at least one number) which
+ has the largest sum and returns its sum and prints the subarray.
+
+ Example 1:
+ Input:
+  arr = [-2,1,-3,4,-1,2,1,-5,4]
+
+ Output:
+  6
+ */
+
+func maxSubArray(_ nums: [Int]) -> Int {
+    var currentMax = nums[0]
+    var maxSoFar = 0
+
+    for i in 0..<nums.count {
+        currentMax = max(currentMax + nums[i], nums[i])
+        maxSoFar = max(currentMax, maxSoFar)
+    }
+
+    return maxSoFar
+}
+let result = maxSubArray([-2,1,-3,4,-1,2,1,-5,4])
 print(result)
